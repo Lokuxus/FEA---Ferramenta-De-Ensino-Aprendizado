@@ -9,7 +9,7 @@ namespace FEA.Controllers
 {
     public class LoginController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Login()
         {
             var usuario = new UsuarioViewModel();
             return View("Login", usuario);
@@ -20,7 +20,8 @@ namespace FEA.Controllers
         {
             if (ModelState.IsValid)
             {
-                return View("Resultado", usuario);
+                return View("../Home/Index", usuario);
+                //return View("Index", usuario);
             }
 
             return View("Login", usuario);

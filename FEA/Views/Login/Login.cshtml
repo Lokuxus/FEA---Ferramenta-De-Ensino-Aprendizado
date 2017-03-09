@@ -33,7 +33,7 @@
         <div class="login-box-body">
             <p class="login-box-msg">Faça o Login para iniciar sessão</p>
 
-            <form action="@Url.Action("", "")" method="post">
+            <form action="@Url.Action("Logar", "Login")" method="post">
                 <div class="form-group has-feedback">
                     @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "E-mail" , type = "email" })
                     @Html.ValidationMessageFor(x => x.Email)

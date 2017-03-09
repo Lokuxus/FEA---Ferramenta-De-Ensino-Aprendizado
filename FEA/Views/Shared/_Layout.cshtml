@@ -17,7 +17,6 @@
     <!-- TEMAS DA PAGINA -->
     <link rel="stylesheet" href="~/Content/CSS/FEA.min.css" />
     <link rel="stylesheet" href="~/Content/CSS/FEA.css" />
-
     <link rel="stylesheet" href="~/Content/CSS/skin/_all-skins.min.css">
     <!-- iCheck - O modelos dos Chekbox-->
     <link rel="stylesheet" href="~/Content/Plugins/Check/square/blue.css" />
@@ -143,13 +142,13 @@
                     <!-- Barra superior -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../Imagens/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="~/Content/Img/user2-160x160.jpg" class="user-image" alt="User Image">
                             <span class="hidden-xs">Professor</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="../Imagens/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="~/Content/Img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
                                     Professor
@@ -197,7 +196,7 @@
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="../Imagens/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="~/Content/Img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
                         <p>Professor</p>
@@ -233,8 +232,8 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="Lista.html"><i class="fa fa-circle-o"></i> Arvores </a></li>
-                            <li><a href="ListaAlunos.html"><i class="fa fa-circle-o"></i> Alunos </a></li>
+                            <li><a href="@Url.Action("ListaArvore" , "Lista")"><i class="fa fa-circle-o"></i> Arvores </a></li>
+                            <li><a href="@Url.Action("ListaAluno" , "Lista")"><i class="fa fa-circle-o"></i> Alunos </a></li>
                         </ul>
                     </li>
                 </ul>
