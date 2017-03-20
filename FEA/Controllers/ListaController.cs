@@ -8,12 +8,12 @@ namespace FEA.Controllers
 {
     public class ListaController : Controller
     {
-        // GET: Lista
+        // GET: ListaArvores
         public ActionResult ListaArvore()
         {
             return View();
         }
-
+        // GET: ListaAluno
         public ActionResult ListaAluno()
         {
             return View();
