@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Arvores";
+}
+<div class="content">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Arvores
+        </h1>
+        <ol class="breadcrumb">
+            <a href="@Url.Action("CadastroArvore" , "Arvore")"><button type="button" class="btn-sm btn-danger">Nova Arvore</button></a>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Materias</th>
+                                    <th>Turmas</th>
+                                    <th>Editar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Arvore 1</td>
+                                    <td>Matematica</td>
+                                    <td>Turma 1</td>
+                                    <td><a href="#"><button type="button" class="btn btn-info">Editar</button></a> </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div> 
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>

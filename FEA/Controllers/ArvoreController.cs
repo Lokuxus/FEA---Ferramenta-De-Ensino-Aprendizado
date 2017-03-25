@@ -6,17 +6,18 @@ using System.Web.Mvc;
 
 namespace FEA.Controllers
 {
-    public class ListaController : Controller
+    public class ArvoreController : Controller
     {
         // GET: Lista
-        public ActionResult ListaArvore()
+        public ActionResult Arvores()
         {
             return View();
         }
 
-        public ActionResult ListaAluno()
+        public ActionResult CadastroArvore()
         {
             return View();
         }
+
     }
 }
