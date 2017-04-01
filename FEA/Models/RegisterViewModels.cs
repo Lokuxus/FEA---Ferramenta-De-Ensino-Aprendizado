@@ -10,13 +10,13 @@ namespace FEA.Models
     {
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Questao")]
-        public string Questao { get; set; }
+        [Display(Name = "materia")]
+        public string materia { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Resposta")]
-        public string Resposta { get; set; }
+        [Display(Name = "Turma")]
+        public string turma { get; set; }
 
     }
 }

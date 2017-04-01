@@ -551,6 +551,20 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\SqlServerRepositorio.csproj">
+      <Project>{5846e5c6-0d73-4835-b6b8-1e714f5b2541}</Project>
+      <Name>SqlServerRepositorio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FEA.CadastroMateria\FEA.CadastroMateria.csproj">
+      <Project>{3effd78b-8261-46bf-a070-0da51449bd8a}</Project>
+      <Name>FEA.CadastroMateria</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FEA.Usuario\FEA.Usuario.csproj">
+      <Project>{93e36c24-318c-4b36-b8b7-3e6a191670dd}</Project>
+      <Name>FEA.Usuario</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

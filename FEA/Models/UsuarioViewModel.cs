@@ -8,6 +8,7 @@ namespace FEA.Models
 {
     public class UsuarioViewModel
     {
+
         [Required(ErrorMessage = "Campo obrigatório")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Campo obrigatório")]
