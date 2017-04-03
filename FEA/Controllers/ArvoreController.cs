@@ -12,15 +12,24 @@ namespace FEA.Controllers
         // GET: Lista
         public ActionResult Arvores()
         {
-            return View();
+            var retornarSQL = MateriaModel.BuscaListaMateria();
+
+            return View("Arvores", retornarSQL);
         }
 
-        public ActionResult CadastroArvore(string materia, string turma )
+        public ActionResult CadastroArvore()
         {
-            var cad_materia = new CadastroMateriaModel.CadastroMateriaModel();
-            cad_materia.Cadastra_Materia(materia, turma);
-            
             return View();
+            // return RedirectToAction("SalvaCadastroArvore");
+        }
+
+        [HttpGet]
+        public ActionResult SalvaCadastroArvore(string materia, string turma)
+        {
+            var cad_materia = new CadastroMateriaModel.MateriaModel();
+            var retorno = cad_materia.Cadastra_Materia(materia: materia, turma: turma);
+
+            return RedirectToAction("Arvores");
         }
 
     }

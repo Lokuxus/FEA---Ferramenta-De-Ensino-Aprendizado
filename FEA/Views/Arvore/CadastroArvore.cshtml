@@ -23,7 +23,7 @@
 
 
     <div class="box-body">
-        @using (Html.BeginForm("CadastroArvore", "Arvore", FormMethod.Post, new { @class = "form-group", @role = "form" }))
+        @using (Html.BeginForm("SalvaCadastroArvore", "Arvore", FormMethod.Get, new { @class = "form-group", @role = "form" }))
             {
             @Html.AntiForgeryToken()
                 <!-- Questao input -->
@@ -41,7 +41,7 @@
                     @Html.TextBoxFor(m => m.turma, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
-                    <a href="#"><button type="button" class="btn btn-primary">Salvar</button></a>
+                    <button type="submit" class="btn btn-primary" value="CadastroArvore">Salvar</button>
                 </div>
                 //@Url.Action("Arvores", "Arvore")
         }
