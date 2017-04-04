@@ -15,37 +15,33 @@ namespace FEA.Controllers
 
         public ActionResult Login()
         {
-            var usuario = new UsuarioViewModel();
-            return View("Login", usuario);
 
-//            if(usuario.IsLogado(user: "hendrig", psswd: "teste"))
-  //          {   
-    //            ViewBag.Login = usuario.Login;
-     //          return RedirectToAction("Login");
-        //    }else
-          //  {
+            return View("Login");
+
+            //            if(usuario.IsLogado(user: "hendrig", psswd: "teste"))
+            //          {   
+            //            ViewBag.Login = usuario.Login;
+            //          return RedirectToAction("Login");
+            //    }else
+            //  {
             //    return RedirectToAction("Erro");
-           // }
+            // }
 
-            
+
         }
 
         [HttpPost]
-        public ActionResult Logar(UsuarioViewModel usuario)
+        public ActionResult Logar(string email, string senha)
         {
+
+
             if (ModelState.IsValid)
             {
-                return View("../Home/Index", usuario);
+                return View("../Home/Index");
                 //return View("Index", usuario);
             }
 
-            return View("Login", usuario);
+            return View("Login");
         }
-
-        private ActionResult Resultado(UsuarioViewModel usuario)
-        {
-            return View(usuario);
-        }
-
     }
 }

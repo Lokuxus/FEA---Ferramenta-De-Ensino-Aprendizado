@@ -14,10 +14,12 @@ namespace FEA.Usuario
         
         public bool IsLogado(string user, string psswd)
         {
-            // sql que consulta se o usu'ario e a senha est'ao corretos
-            // se eles est'ao corretos, eu atribuo o login `a variavel
-
             this.Login = user;
+
+            var sql = @"Select * from Usuario";
+            var repositorio = new SqlServerRepositorio.SqlServerRepositorio();
+
+            var retorno = repositorio.ExecutarSqlComRetorno(sql);
 
             return true;
         }

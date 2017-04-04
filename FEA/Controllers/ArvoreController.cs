@@ -31,6 +31,16 @@ namespace FEA.Controllers
 
             return RedirectToAction("Arvores");
         }
+        [HttpGet]
+        public ActionResult DeletaMateria(string idMateria)
+        {
+            var conexao = new CadastroMateriaModel.MateriaModel();
+
+            var retorno = conexao.Deleta_Materia(id: idMateria);
+
+            return RedirectToAction("Arvores");
+        }
+
 
     }
 }

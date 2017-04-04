@@ -36,7 +36,19 @@ namespace FEA.CadastroMateriaModel
             return retornoSQL;
         }
 
-        
+        public bool Deleta_Materia(string id)
+        {
+            var parametros = new Dictionary<string, string>();
+            parametros.Add("@IdMateria", id);
+
+            var repositorio = new SqlServerRepositorio.SqlServerRepositorio();
+
+            var sql = "Delete from Diciplina where id = @IdMateria";
+
+            var retorno = repositorio.ExecutarSql(sql, parametros);
+            
+            return retorno;
+        }
 
     }
 
