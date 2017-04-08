@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SqlServerRepositorio;
 using System.Data;
 
+
 namespace FEA.CadastroMateriaModel
 {
     public class MateriaModel
@@ -29,6 +30,16 @@ namespace FEA.CadastroMateriaModel
         public static DataSet BuscaListaMateria()
         {
             var sql = @"Select * from Diciplina";
+            var repositorio = new SqlServerRepositorio.SqlServerRepositorio();
+
+            var retornoSQL = repositorio.ExecutarSqlComRetorno(sql);
+
+            return retornoSQL;
+        }
+
+        public static DataSet NumeroMateria()
+        {
+            var sql = @"Select COUNT(*) as numero from Diciplina";
             var repositorio = new SqlServerRepositorio.SqlServerRepositorio();
 
             var retornoSQL = repositorio.ExecutarSqlComRetorno(sql);

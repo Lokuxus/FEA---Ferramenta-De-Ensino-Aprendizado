@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FEA.CadastroMateriaModel;
 
 namespace FEA.Controllers
 {
@@ -10,7 +11,9 @@ namespace FEA.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var retornarSQL = MateriaModel.NumeroMateria();
+
+            return View("Index", retornarSQL);
         }
 
         public ActionResult About()
