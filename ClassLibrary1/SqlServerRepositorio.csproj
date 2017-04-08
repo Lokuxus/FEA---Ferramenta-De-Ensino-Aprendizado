@@ -7,8 +7,8 @@
     <ProjectGuid>{5846E5C6-0D73-4835-B6B8-1E714F5B2541}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibrary1</RootNamespace>
-    <AssemblyName>ClassLibrary1</AssemblyName>
+    <RootNamespace>FEA.DataBase</RootNamespace>
+    <AssemblyName>FEA.DataBase</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
