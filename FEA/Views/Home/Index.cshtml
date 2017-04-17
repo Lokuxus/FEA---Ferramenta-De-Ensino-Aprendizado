@@ -21,37 +21,38 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
                 <div class="inner">
-                    @foreach (System.Data.DataRow linha in Model.Tables[0].Rows)
-                    {
-                        <h3> @linha["numero"].ToString()</h3>
-                    }
+
+                        @foreach (System.Data.DataRow linha in Model.Tables[0].Rows)
+                        {
+                            <h3> @linha["numero"].ToString()</h3>
+                        }
 
 
-              <p>Arvores</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="@Url.Action("Arvores" , "Arvore")" class="small-box-footer">Listas<i class=""></i></a>
+                    <p>Arvores</p>
                 </div>
+                <div class="icon">
+                    <i class="ion ion-bag"></i>
+                </div>
+                <a href="@Url.Action("Arvores" , "Arvore")" class="small-box-footer">Listas<i class=""></i></a>
             </div>
+        </div>
         <!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-yellow">
-                                <div class="inner">
-                                    <h3>4</h3>
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>4</h3>
 
-                                    <p>Alunos</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                                <a href="@Url.Action("ListaAluno" , "Lista")" class="small-box-footer">Alunos<i class=""></i></a>
-                            </div>
-                        </div>
+                    <p>Alunos</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                <a href="@Url.Action("ListaAluno" , "Lista")" class="small-box-footer">Alunos<i class=""></i></a>
+            </div>
+        </div>
         <!-- ./col -->
-                    </div>
+    </div>
     <!-- /.row -->
     <!-- Main row -->
                         <div class="row">

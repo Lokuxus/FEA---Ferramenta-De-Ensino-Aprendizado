@@ -13,7 +13,7 @@ namespace FEA.Controllers
         public ActionResult Arvores()
         {
             var retornarSQL = MateriaModel.BuscaListaMateria();
-
+            
             return View("Arvores", retornarSQL);
         }
 
@@ -30,6 +30,7 @@ namespace FEA.Controllers
             var retorno = cad_materia.Cadastra_Materia(materia: materia, turma: turma);
 
             return RedirectToAction("Arvores");
+
         }
         [HttpGet]
         public ActionResult DeletaMateria(string idMateria)

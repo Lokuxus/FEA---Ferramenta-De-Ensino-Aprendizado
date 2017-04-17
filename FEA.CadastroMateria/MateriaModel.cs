@@ -34,7 +34,19 @@ namespace FEA.CadastroMateriaModel
 
             var retornoSQL = repositorio.ExecutarSqlComRetorno(sql);
 
-            return retornoSQL;
+            if (retornoSQL != null)
+            {
+
+                return retornoSQL;
+            }
+            else
+            {
+                DataTable table1 = new DataTable("Retorno");
+
+                DataSet set = new DataSet("Retorno");
+                set.Tables.Add(table1);
+                return set;
+            }
         }
 
         public static DataSet NumeroMateria()
@@ -43,8 +55,19 @@ namespace FEA.CadastroMateriaModel
             var repositorio = new SqlServerRepositorio.SqlServerRepositorio();
 
             var retornoSQL = repositorio.ExecutarSqlComRetorno(sql);
+            if (retornoSQL != null)
+            {
 
-            return retornoSQL;
+                return retornoSQL;
+            }
+            else {
+                DataTable table1 = new DataTable("Retorno");
+                table1.Columns.Add("numero");
+                table1.Rows.Add(0);
+                DataSet set = new DataSet("Retorno");
+                set.Tables.Add(table1);
+                return set;
+            }
         }
 
         public bool Deleta_Materia(string id)
