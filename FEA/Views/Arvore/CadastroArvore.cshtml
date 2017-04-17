@@ -23,7 +23,7 @@
 
 
     <div class="box-body">
-        @using (Html.BeginForm("SalvaCadastroArvore", "Arvore", FormMethod.Get, new { @class = "form-group", @role = "form" }))
+        @using (Html.BeginForm("SalvaCadastroArvore", "Arvore", FormMethod.Post, new { @class = "form-group", @role = "form" }))
             {
             @Html.AntiForgeryToken()
             <!-- Informa a Materia -->

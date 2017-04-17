@@ -8,9 +8,9 @@
         <h1>
             Arvores
         </h1>
-        <ol class="breadcrumb">
-            <a href="@Url.Action("CadastroArvore" , "Arvore")"><button type="button" class="btn-sm btn-danger">Nova Arvore</button></a>
-        </ol>
+        <div class="breadcrumb">
+            <a href="@Url.Action("CadastroArvore" , "Arvore")"> <button type="button" class="btn-sm btn-danger">Nova Arvore</button></a>
+        </div>
     </section>
 
     <!-- Main content -->
@@ -31,13 +31,12 @@
                                     <th>Deletar</th>
                                 </tr>
                             </thead>
-                            <tbody>    
-                            @foreach (System.Data.DataRow linha in Model.Tables[0].Rows)
-                            {
+                            <tbody> 
+                                @if (Model.Tables[0].Rows.Count > 0)
+                                {
+                                    foreach (System.Data.DataRow linha in Model.Tables[0].Rows)
+                                    {
                                 <tr>
-                                    <th>
-                                            @linha["Id"].ToString()
-                                    </th>
                                     <th>
                                             @linha["Diciplina"].ToString()
                                     </th>
@@ -45,13 +44,14 @@
                                             @linha["Turma"].ToString()
                                     </th>
                                     <td>
-                                       <a href="#"><button type="button" class="btn btn-info">Editar</button></a> 
+                                       <button href="#" type="button" class="btn btn-info">Editar</button>
                                     </td>
                                     <td>
-                                        <a href=@Url.Action("DeletaMateria", new { idMateria = linha["Id"].ToString() }) ><button type="button" class="btn btn-adn">Excluir</button></a>
+                                        <button href=@Url.Action("DeletaMateria", new { idMateria = linha["Id"].ToString() }) type="button" class="btn btn-adn">Excluir</button>
                                     </td>
                                 </tr>
-                            }
+                                    }
+                                }
                             </tbody>
                         </table>
                     </div>
