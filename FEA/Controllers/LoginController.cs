@@ -38,7 +38,8 @@ namespace FEA.Controllers
 
             if (ModelState.IsValid)
             {
-                return View("../Home/Index");
+                return RedirectToAction("Index", "Home");
+                //return View("../Home/Index");
                 //return View("Index", usuario);
             }
 
