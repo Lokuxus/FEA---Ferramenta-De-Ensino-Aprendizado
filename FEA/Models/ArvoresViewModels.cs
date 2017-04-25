@@ -19,4 +19,19 @@ namespace FEA.Models
         public string turma { get; set; }
     }
 
+    public class CadastroNodoViewModel
+    {
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Nome")]
+        public string nome { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Arvore")]
+        public string arvore { get; set; }
+    }
+
 }
+
+

@@ -27,9 +27,49 @@ namespace FEA.CadastroMateriaModel
             return retorno;
         }
 
+        public bool Cadastra_Nodo(string arvore, string nome)
+        {
+            var parametros = new Dictionary<string, string>();
+            parametros.Add("@Arvore", arvore);
+            parametros.Add("@Nome", nome);
+
+            var sql = @"INSERT INTO nivel_do_conhecimento (id_arvore, nome) 
+                        VALUES (@Arvore, @Nome)";
+            var conexao = new SqlServerRepositorio.SqlServerRepositorio();
+
+            var retorno = conexao.ExecutarSql(sql, parametros);
+
+            return retorno;
+        }
+
         public static DataSet BuscaListaMateria()
         {
             var sql = @"Select * from Diciplina";
+            var repositorio = new SqlServerRepositorio.SqlServerRepositorio();
+
+            var retornoSQL = repositorio.ExecutarSqlComRetorno(sql);
+
+            if (retornoSQL != null)
+            {
+
+                return retornoSQL;
+            }
+            else
+            {
+                DataTable table1 = new DataTable("Retorno");
+
+                DataSet set = new DataSet("Retorno");
+                set.Tables.Add(table1);
+                return set;
+            }
+        }
+
+        public static DataSet BuscaListaNodo(string arvore)
+        {
+            var parametros = new Dictionary<string, string>();
+            parametros.Add("@Arvore", arvore);
+
+            var sql = @"Select * from nivel_do_conhecimento where (id_arvore = @Arvore)";
             var repositorio = new SqlServerRepositorio.SqlServerRepositorio();
 
             var retornoSQL = repositorio.ExecutarSqlComRetorno(sql);
@@ -81,6 +121,20 @@ namespace FEA.CadastroMateriaModel
 
             var retorno = repositorio.ExecutarSql(sql, parametros);
             
+            return retorno;
+        }
+
+        public bool Deleta_Nodo(string id)
+        {
+            var parametros = new Dictionary<string, string>();
+            parametros.Add("@IdMateria", id);
+
+            var repositorio = new SqlServerRepositorio.SqlServerRepositorio();
+
+            var sql = "Delete from nivel_do_conhecimento where id = @IdMateria";
+
+            var retorno = repositorio.ExecutarSql(sql, parametros);
+
             return retorno;
         }
 
