@@ -39,6 +39,7 @@ namespace FEA.Controllers
 
             var retorno = conexao.Deleta_Materia(id: idMateria);
 
+            
             return RedirectToAction("Arvores");
         }
 

@@ -47,7 +47,8 @@
                                        <button href="#" type="button" class="btn btn-info">Editar</button>
                                     </td>
                                     <td>
-                                        <button href=@Url.Action("DeletaMateria", new { idMateria = linha["Id"].ToString() }) type="button" class="btn btn-adn">Excluir</button>
+                                        <!--<a href=@Url.Action("DeletaMateria", new { idMateria = linha["Id"].ToString() })></a> -->
+                                        <button type="button"  class="btn btn-adn btn-remover" data-batata ="@linha["Id"].ToString()" >Excluir</button>
                                     </td>
                                 </tr>
                                     }

@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>FEA | Home</title>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <!-- jQuery 2.2.3 (Botoes do menus efeito de abrir e fechar)-->
+    <script src="@Url.Content("~/Scripts/jQuery/jquery-2.2.3.min.js")"></script>
+    <!-- jQuery UI 1.11.4 -->
     <!-- Responsividade-->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -26,7 +30,11 @@
     <link rel="stylesheet" href="~/Content/Plugins/DataPicker/DataRangePicker/daterangepicker.css" />
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="~/Content/Plugins/Bootstrap-wysihtml5/bootstrap3-wysihtml5.css" />
-
+    <!--  App Alert SweetAlert -->
+    <script src="@Url.Content("~/Scripts/sweetalert/dist/sweetalert.min.js")"></script>
+    <link rel="stylesheet" type="text/css" href="~/Scripts/sweetalert/dist/sweetalert.css">
+    
+    <script src="@Url.Content("~/Scripts/AppMensagem.js")"></script>
 </head>
 <body class="corpo_pagina skin-blue sidebar-mini">
     <div class="wrapper">
@@ -239,9 +247,6 @@
         <div class="control-sidebar-bg"></div>
     </div>
     <!-- ./wrapper -->
-    <!-- jQuery 2.2.3 (Botoes do menus efeito de abrir e fechar)-->
-    <script src="@Url.Content("~/Scripts/jQuery/jquery-2.2.3.min.js")"></script>
-    <!-- jQuery UI 1.11.4 -->
     <script>
   $.widget.bridge('uibutton', $.ui.button);
     </script>
