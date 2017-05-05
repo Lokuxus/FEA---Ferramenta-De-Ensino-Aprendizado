@@ -1,5 +1,4 @@
-﻿
-@model FEA.Models.CadastroNodoViewModel
+﻿@model System.Data.DataSet
 @{
     ViewBag.Title = "CadastroNodo";
 }
@@ -28,16 +27,13 @@
             <!-- Informa a Materia -->
                 <div class="form-group">
                     <label>Nome</label>
-                    @Html.TextBoxFor(m => m.nome, new { @class = "form-control" , @placeholder = "Nome" })
+                    @Html.TextBoxFor(m => m.conteudo, new { @class = "form-control", @placeholder = "Conteudo Abordado" })
                 </div>
 
-
-                 @ViewBag.arvore => m.nome;
-                
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary" >Salvar</button>
                 </div>
-        }
+            }
     </div>
 
     <!-- /.box-body -->
