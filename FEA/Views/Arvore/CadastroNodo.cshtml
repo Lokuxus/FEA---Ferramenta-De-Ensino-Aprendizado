@@ -1,0 +1,45 @@
+﻿
+@model FEA.Models.CadastroNodoViewModel
+@{
+    ViewBag.Title = "CadastroNodo";
+}
+
+
+<section class="content-header">
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Forms</a></li>
+        <li class="active">General Elements</li>
+    </ol>
+</section>
+
+
+<section class="box box-warning">
+    <div class="box-header with-border">
+        <h3 class="box-title">Cadastro de Diciplinas</h3>
+    </div>
+    <!-- /.box-header -->
+
+
+    <div class="box-body">
+        @using (Html.BeginForm("SalvaNodoArvore", "Arvore", FormMethod.Get, new { @class = "form-group", @role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            <!-- Informa a Materia -->
+                <div class="form-group">
+                    <label>Nome</label>
+                    @Html.TextBoxFor(m => m.nome, new { @class = "form-control" , @placeholder = "Nome" })
+                </div>
+
+
+                 @ViewBag.arvore => m.nome;
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" >Salvar</button>
+                </div>
+        }
+    </div>
+
+    <!-- /.box-body -->
+
+</section>

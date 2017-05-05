@@ -1,20 +1,23 @@
 ﻿@model System.Data.DataSet
 @{
-    ViewBag.Title = "Arvores";
+    ViewBag.Title = "Nodos";
 }
 <div class="content">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Arvores
+            Nodos
         </h1>
-        <div class="breadcrumb">
-            <a href="@Url.Action("CadastroArvore" , "Arvore")"> <button type="button" class="btn-sm btn-danger">Nova Arvore</button></a>
+        
+        <div class="breadcrumb">            
+            <a href="@Url.Action("CadastroNodo" , "Arvore", Model.Tables[1].Rows[0]["Arvore"])"> <button type="button" class="btn-sm btn-danger">Nova Arvore</button></a>
         </div>
     </section>
 
     <!-- Main content -->
     <section class="content">
+
+        <!-- Modal -->
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
@@ -24,8 +27,7 @@
                             
                             <thead>
                                 <tr>
-                                    <th>Materias</th>
-                                    <th>Turmas</th>
+                                    <th>Nome</th>
                                     <th>Editar</th>
                                     <th>Deletar</th>
                                 </tr>
@@ -37,16 +39,13 @@
                                     {
                                 <tr>
                                     <th>
-                                            @linha["Diciplina"].ToString()
-                                    </th>
-                                    <th>
-                                            @linha["Turma"].ToString()
+                                            @linha["nome"].ToString()
                                     </th>
                                     <td>
-                                       <button href=@Url.Action("Nodos", new { Arvore = linha["Id"].ToString() }) type="button" class="btn btn-info">Editar</button>
+                                       <button href=@Url.Action("Questao", new { idMateria = linha["id"].ToString() }) type="button" class="btn btn-info">Editar</button>
                                     </td>
                                     <td>
-                                        <button type="button"  class="btn btn-adn btn-remover" data-batata ="@linha["Id"].ToString()" data-diciplina="@linha["Diciplina"].ToString()" >Excluir</button>
+                                        <button href=@Url.Action("DeletaNodo", new { idNodo = linha["id"].ToString() }) type="button" class="btn btn-adn">Excluir</button>
                                     </td>
                                 </tr>
                                     }

@@ -190,6 +190,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\NodosViewModels.cs" />
     <Compile Include="Models\ArvoresViewModels.cs" />
     <Compile Include="Models\RegisterViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -531,6 +532,7 @@
     <Content Include="Views\Lista\ListaAluno.cshtml" />
     <Content Include="Views\Arvore\Arvores.cshtml" />
     <Content Include="Views\Arvore\CadastroArvore.cshtml" />
+    <Content Include="Views\Arvore\Nodos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
