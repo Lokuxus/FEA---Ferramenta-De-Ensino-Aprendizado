@@ -1,14 +1,15 @@
 ﻿$(document).ready(function () {
     $(document).on("click", ".btn-remover", function () {
         var teste = $(this).data("batata");
+        var diciplina = $(this).data("diciplina");
 
         swal({
-              title: "Are you sure?",
-              text: "You will not be able to recover this imaginary file!",
+            title: "Remover Diciplina",
+            text: "Voce tem certeza que deseja remover a Diciplina de  " + diciplina,
               type: "warning",
               showCancelButton: true,
               confirmButtonColor: "#DD6B55",
-              confirmButtonText: "Yes, delete it!  " + teste,
+              confirmButtonText: "Sim",
               closeOnConfirm: false
         },
             function () {
@@ -18,15 +19,10 @@
                     url: url, 
                     data: { idMateria: teste },
                     success: function (date) {
+                        swal("Material Deletada", "Materia deletada", "success");
                         window.location = "/Arvore/Arvores";
-                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
-
-                    }
+                    }   
                 });
             });
     });
 });
-
-function Teste(teste) {
-    
-}

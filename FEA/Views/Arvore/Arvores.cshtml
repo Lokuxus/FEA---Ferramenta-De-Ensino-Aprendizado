@@ -24,7 +24,6 @@
                             
                             <thead>
                                 <tr>
-                                    <th>Id</th>
                                     <th>Materias</th>
                                     <th>Turmas</th>
                                     <th>Editar</th>
@@ -47,8 +46,7 @@
                                        <button href="#" type="button" class="btn btn-info">Editar</button>
                                     </td>
                                     <td>
-                                        <!--<a href=@Url.Action("DeletaMateria", new { idMateria = linha["Id"].ToString() })></a> -->
-                                        <button type="button"  class="btn btn-adn btn-remover" data-batata ="@linha["Id"].ToString()" >Excluir</button>
+                                        <button type="button"  class="btn btn-adn btn-remover" data-batata ="@linha["Id"].ToString()" data-diciplina="@linha["Diciplina"].ToString()" >Excluir</button>
                                     </td>
                                 </tr>
                                     }
