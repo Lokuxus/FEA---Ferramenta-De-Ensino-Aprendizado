@@ -28,8 +28,23 @@ namespace FEA.Models
 
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Arvore")]
-        public string arvore { get; set; }
+        [Display(Name = "Questao")]
+        public string questao { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Resposta A")]
+        public string respostaA { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Resposta B")]
+        public string respostaB { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Resposta C")]
+        public string respostaC { get; set; }
     }
 
 }

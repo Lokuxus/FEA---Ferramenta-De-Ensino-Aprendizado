@@ -1,9 +1,8 @@
-﻿@model System.Data.DataSet
+﻿
+@model FEA.Models.CadastroNodoViewModel
 @{
-    ViewBag.Title = "CadastroNodo";
+    ViewBag.Title = "CadastroArvore";
 }
-
-
 <section class="content-header">
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -15,27 +14,42 @@
 
 <section class="box box-warning">
     <div class="box-header with-border">
-        <h3 class="box-title">Cadastro de Diciplinas</h3>
+        <h3 class="box-title">Cadastro de Nodos</h3>
     </div>
     <!-- /.box-header -->
 
 
     <div class="box-body">
-        @using (Html.BeginForm("SalvaNodoArvore", "Arvore", FormMethod.Get, new { @class = "form-group", @role = "form" }))
+        @using (Html.BeginForm("SalvaNodoArvore", "Arvore", FormMethod.Post, new { @class = "form-group", @role = "form" }))
             {
+            //TODO Realizar os teste Na View
             @Html.AntiForgeryToken()
             <!-- Informa a Materia -->
-                <div class="form-group">
-                    <label>Nome</label>
-                    @Html.TextBoxFor(m => m.conteudo, new { @class = "form-control", @placeholder = "Conteudo Abordado" })
-                </div>
+            <div class="form-group">
+                <label>Nome</label>
+                @Html.TextBoxFor(m => m.nome, new { @class = "form-control", @placeholder = "Nome" })
+            </div>
+            <div class="form-group">
+                <label>Questao</label>
+                @Html.TextBoxFor(m => m.questao, new { @class = "form-control", @placeholder = "Questao" })
+            </div>
+            <div class="form-group">
+                <label>Resposta A</label>
+                @Html.TextBoxFor(m => m.respostaA, new { @class = "form-control", @placeholder = "Resposta A" })
+            </div>
+            <div class="form-group">
+                <label>Resposta B</label>
+                @Html.TextBoxFor(m => m.respostaB, new { @class = "form-control", @placeholder = "Resposta B" })
+            </div>
+            <div class="form-group">
+                <label>Resposta C</label>
+                @Html.TextBoxFor(m => m.respostaC, new { @class = "form-control", @placeholder = "Resposta C" })
+            </div>
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary" >Salvar</button>
-                </div>
-            }
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" value="SalvaNodoArvore">Salvar</button>
+            </div>
+        }
     </div>
-
-    <!-- /.box-body -->
 
 </section>

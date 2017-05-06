@@ -10,6 +10,7 @@ namespace FEA.Controllers
 {
     public class ArvoreController : Controller
     {
+        public string _idArvore = "12";
         // GET: Lista
         public ActionResult Arvores()
         {
@@ -21,10 +22,10 @@ namespace FEA.Controllers
         public ActionResult Nodos(string Arvore)
         {
             var retornarSQL = MateriaModel.BuscaListaNodo(arvore: Arvore);
-            DataTable table1 = new DataTable("Arvore");
-            table1.Columns.Add("arvore");
-            table1.Rows.Add(Arvore);
-            retornarSQL.Tables.Add(table1);
+            DataTable nodos = new DataTable("Arvore");
+            nodos.Columns.Add("arvore");
+            nodos.Rows.Add(Arvore);
+            retornarSQL.Tables.Add(nodos);
 
 
             return View("Nodos", retornarSQL);
@@ -38,7 +39,8 @@ namespace FEA.Controllers
 
         public ActionResult CadastroNodo(string arvore)
         {
-            ViewBag.arvore = arvore;
+            //_idArvore = arvore;
+            _idArvore = "12";
             return View("CadastroNodo", arvore);
             // return RedirectToAction("SalvaCadastroArvore");
         }
@@ -53,13 +55,14 @@ namespace FEA.Controllers
 
         }
 
-        [HttpGet]
-        public ActionResult SalvaNodoArvore(string arvore, string nome)
+        [HttpPost]
+        public ActionResult SalvaNodoArvore(string nome, string questao, string respostaA, string respostaB, string respostaC)
         {
             var cad_materia = new CadastroMateriaModel.MateriaModel();
-            var retorno = cad_materia.Cadastra_Nodo(arvore: arvore, nome: nome);
+            //TODO Reves os parametros
+            var retorno = cad_materia.Cadastra_Nodo(arvore: _idArvore, nome: nome, questao: questao, respostaA : respostaA, respostaB: respostaB, respostaC: respostaC);
 
-            return RedirectToAction("Arvores");
+            return RedirectToAction("Nodos",_idArvore);
 
         }
 

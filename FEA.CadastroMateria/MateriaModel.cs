@@ -27,14 +27,19 @@ namespace FEA.CadastroMateriaModel
             return retorno;
         }
 
-        public bool Cadastra_Nodo(string arvore, string nome)
+        public bool Cadastra_Nodo(string arvore, string nome, string questao, string respostaA, string respostaB, string respostaC)
         {
             var parametros = new Dictionary<string, string>();
             parametros.Add("@Arvore", arvore);
             parametros.Add("@Nome", nome);
+            parametros.Add("@Questao", questao);
+            parametros.Add("@RespostaA", respostaA);
+            parametros.Add("@RespostaB", respostaB);
+            parametros.Add("@RespostaC", respostaC);
 
-            var sql = @"INSERT INTO nivel_do_conhecimento (id_arvore, nome) 
-                        VALUES (@Arvore, @Nome)";
+            //TODO Rever os parametros Modal
+            var sql = @"INSERT INTO nivel_do_conhecimento (id_arvore, nome, questao, respostaA, respotaB, respotaC) 
+                        VALUES (@Arvore, @Nome, @Questao ,@RespostaA, @RespostaB, @RespostaC)";
             var conexao = new SqlServerRepositorio.SqlServerRepositorio();
 
             var retorno = conexao.ExecutarSql(sql, parametros);
