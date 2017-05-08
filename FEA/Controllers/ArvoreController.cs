@@ -10,13 +10,20 @@ namespace FEA.Controllers
 {
     public class ArvoreController : Controller
     {
-        public string _idArvore = "12";
+        public static string _idArvore;
         // GET: Lista
         public ActionResult Arvores()
         {
             var retornarSQL = MateriaModel.BuscaListaMateria();
             
             return View("Arvores", retornarSQL);
+        }
+
+        public ActionResult ArvoreAluno()
+        {
+            var retornarSQL = MateriaModel.BuscaListaMateria();
+
+            return View("ArvoreAluno", retornarSQL);
         }
 
         public ActionResult Nodos(string Arvore)
@@ -29,6 +36,12 @@ namespace FEA.Controllers
 
 
             return View("Nodos", retornarSQL);
+        }
+
+        public ActionResult NodoAluno(string Arvore)
+        {
+            var retornarSQL = MateriaModel.BuscaListaNodo(arvore: Arvore);
+            return View("NodoAluno", retornarSQL);
         }
 
         public ActionResult CadastroArvore()

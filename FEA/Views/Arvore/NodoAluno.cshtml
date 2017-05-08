@@ -1,0 +1,57 @@
+﻿@model System.Data.DataSet
+@{
+    ViewBag.Title = "NodoAluno";
+}
+<div class="content">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Nodos
+        </h1>        
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Modal -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Editar</th>
+                                </tr>
+                            </thead>
+                            <tbody> 
+                                @if (Model.Tables[0].Rows.Count > 0)
+                                {
+                                    foreach (System.Data.DataRow linha in Model.Tables[0].Rows)
+                                    {
+                                <tr>
+                                    <th>
+                                            @linha["nome"].ToString()
+                                    </th>
+                                    <td>
+                                       <button href=@Url.Action("Questao", new { idMateria = linha["id"].ToString() }) type="button" class="btn btn-info">Editar</button>
+                                    </td>
+                                </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div> 
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>

@@ -1,0 +1,41 @@
+﻿@model System.Data.DataSet
+@{
+    ViewBag.Title = "ArvoreAluno";
+}
+<div class="content">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Arvores
+        </h1>
+        <div class="breadcrumb">
+
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            @if (Model.Tables[0].Rows.Count > 0)
+            {
+                foreach (System.Data.DataRow linha in Model.Tables[0].Rows)
+                {
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-aqua">
+                            <div class="inner">
+                                <p>@linha["Diciplina"].ToString()</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                            <a href=@Url.Action("Nodos", new { Arvore = linha["Id"].ToString() })><button type="button" class="btn btn-info">Resolver</button></a>
+                        </div>
+                    </div>
+                }
+            }
+            </div>
+            <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
