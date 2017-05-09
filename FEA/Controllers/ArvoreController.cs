@@ -86,6 +86,18 @@ namespace FEA.Controllers
             return RedirectToAction("Nodos", Arvore);
         }
 
+        public ActionResult ArvoreAluno()
+        {
+            var retornarSQL = MateriaModel.BuscaListaMateria();
 
+            return View("ArvoreAluno", retornarSQL);
+        }
+
+        public ActionResult NodoAluno(string Arvore)
+        {
+            var retornarSQL = MateriaModel.BuscaListaNodo(arvore: Arvore);
+            return View("NodoAluno", retornarSQL);
+        }
     }
+
 }
