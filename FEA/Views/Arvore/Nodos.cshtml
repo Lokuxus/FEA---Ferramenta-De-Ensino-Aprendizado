@@ -6,11 +6,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Nodos
+            @Model.Tables[1].Rows[0]["Arvore"]
         </h1>
         
         <div class="breadcrumb">            
-            <a href="@Url.Action("CadastroNodo" , "Arvore", Model.Tables[1].Rows[0]["Arvore"])"> <button type="button" class="btn-sm btn-danger">Nova Arvore</button></a>
+            <a href="@Url.Action("CadastroNodo" , "Arvore", new { })"> <button type="button" class="btn-sm btn-bitbucket">Novo Nodo</button></a>
         </div>
     </section>
 
@@ -28,6 +28,7 @@
                             <thead>
                                 <tr>
                                     <th>Nome</th>
+                                    <th>Questao</th>
                                     <th>Editar</th>
                                     <th>Deletar</th>
                                 </tr>
@@ -40,6 +41,10 @@
                                 <tr>
                                     <th>
                                             @linha["nome"].ToString()
+                                    </th>
+
+                                    <th>
+                                        @linha["questao"].ToString()
                                     </th>
                                     <td>
                                        <button href=@Url.Action("Questao", new { idMateria = linha["id"].ToString() }) type="button" class="btn btn-info">Editar</button>

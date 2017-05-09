@@ -38,7 +38,7 @@ namespace FEA.CadastroMateriaModel
             parametros.Add("@RespostaC", respostaC);
 
             //TODO Rever os parametros Modal
-            var sql = @"INSERT INTO nivel_do_conhecimento (id_arvore, nome, questao, respostaA, respotaB, respotaC) 
+            var sql = @"INSERT INTO Nodos (id_arvore, nome, questao, respostaA, respostaB, respostaC) 
                         VALUES (@Arvore, @Nome, @Questao ,@RespostaA, @RespostaB, @RespostaC)";
             var conexao = new SqlServerRepositorio.SqlServerRepositorio();
 
@@ -74,10 +74,10 @@ namespace FEA.CadastroMateriaModel
             var parametros = new Dictionary<string, string>();
             parametros.Add("@Arvore", arvore);
 
-            var sql = @"Select * from nivel_do_conhecimento where (id_arvore = @Arvore)";
+            var sql = @"Select * from Nodos where (id_arvore = @Arvore)";
             var repositorio = new SqlServerRepositorio.SqlServerRepositorio();
 
-            var retornoSQL = repositorio.ExecutarSqlComRetorno(sql);
+            var retornoSQL = repositorio.ExecutarSqlComRetorno(sql,parametros);
 
             if (retornoSQL != null)
             {

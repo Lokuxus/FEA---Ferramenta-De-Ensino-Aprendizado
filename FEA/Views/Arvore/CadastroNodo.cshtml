@@ -1,5 +1,4 @@
-﻿
-@model FEA.Models.CadastroNodoViewModel
+﻿@model FEA.Models.CadastroNodoViewModel
 @{
     ViewBag.Title = "CadastroArvore";
 }
@@ -29,7 +28,7 @@
                 <label>Nome</label>
                 @Html.TextBoxFor(m => m.nome, new { @class = "form-control", @placeholder = "Nome" })
             </div>
-            <div class="form-group">
+            <div class="form-group">                
                 <label>Questao</label>
                 @Html.TextBoxFor(m => m.questao, new { @class = "form-control", @placeholder = "Questao" })
             </div>
@@ -45,7 +44,6 @@
                 <label>Resposta C</label>
                 @Html.TextBoxFor(m => m.respostaC, new { @class = "form-control", @placeholder = "Resposta C" })
             </div>
-
             <div class="form-group">
                 <button type="submit" class="btn btn-primary" value="SalvaNodoArvore">Salvar</button>
             </div>

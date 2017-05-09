@@ -43,7 +43,7 @@
                                             @linha["Turma"].ToString()
                                     </th>
                                     <td>
-                                        <a href=@Url.Action("Nodos", new { Arvore = linha["Id"].ToString() })><button type="button" class="btn btn-info">Editar</button></a>
+                                        <a href=@Url.Action("Nodos", new { Arvore = linha["Id"].ToString() , nome = linha["Diciplina"].ToString() })><button type="button" class="btn btn-info">Editar</button></a>
                                     </td>
                                     <td>
                                         <button type="button"  class="btn btn-adn btn-remover" data-batata ="@linha["Id"].ToString()" data-diciplina="@linha["Diciplina"].ToString()" >Excluir</button>

@@ -10,7 +10,7 @@ namespace FEA.Controllers
 {
     public class ArvoreController : Controller
     {
-        public string _idArvore = "12";
+        public static string _idArvore;
         // GET: Lista
         public ActionResult Arvores()
         {
@@ -19,15 +19,17 @@ namespace FEA.Controllers
             return View("Arvores", retornarSQL);
         }
 
-        public ActionResult Nodos(string Arvore)
+        public ActionResult Nodos(string Arvore, string nome)
         {
+            _idArvore = Arvore;
+            ViewBag.idAvore = Arvore;
+
             var retornarSQL = MateriaModel.BuscaListaNodo(arvore: Arvore);
             DataTable nodos = new DataTable("Arvore");
             nodos.Columns.Add("arvore");
-            nodos.Rows.Add(Arvore);
+            nodos.Rows.Add(nome);
             retornarSQL.Tables.Add(nodos);
-
-
+ 
             return View("Nodos", retornarSQL);
         }
 
@@ -37,12 +39,9 @@ namespace FEA.Controllers
             // return RedirectToAction("SalvaCadastroArvore");
         }
 
-        public ActionResult CadastroNodo(string arvore)
+        public ActionResult CadastroNodo()
         {
-            //_idArvore = arvore;
-            _idArvore = "12";
-            return View("CadastroNodo", arvore);
-            // return RedirectToAction("SalvaCadastroArvore");
+            return View("CadastroNodo");
         }
 
         [HttpGet]
@@ -60,9 +59,10 @@ namespace FEA.Controllers
         {
             var cad_materia = new CadastroMateriaModel.MateriaModel();
             //TODO Reves os parametros
-            var retorno = cad_materia.Cadastra_Nodo(arvore: _idArvore, nome: nome, questao: questao, respostaA : respostaA, respostaB: respostaB, respostaC: respostaC);
+            var idarvore = _idArvore;
+            var retorno = cad_materia.Cadastra_Nodo(arvore: idarvore, nome: nome, questao: questao, respostaA : respostaA, respostaB: respostaB, respostaC: respostaC);
 
-            return RedirectToAction("Nodos",_idArvore);
+            return RedirectToAction("Nodos","Arvore",new { arvore = idarvore });
 
         }
 

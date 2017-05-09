@@ -45,6 +45,10 @@ namespace FEA.Models
         [DataType(DataType.Text)]
         [Display(Name = "Resposta C")]
         public string respostaC { get; set; }
+
+        public string idArvore { get; set; }
+
+
     }
 
 }
