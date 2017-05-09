@@ -533,6 +533,8 @@
     <Content Include="Views\Arvore\CadastroArvore.cshtml" />
     <Content Include="Views\Arvore\Nodos.cshtml" />
     <Content Include="Views\Arvore\CadastroNodo.cshtml" />
+    <Content Include="Views\Arvore\ArvoreAluno.cshtml" />
+    <Content Include="Views\Arvore\NodoAluno.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

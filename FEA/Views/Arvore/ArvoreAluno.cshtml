@@ -24,12 +24,9 @@
                         <!-- small box -->
                         <div class="small-box bg-aqua">
                             <div class="inner">
-                                <p>@linha["Diciplina"].ToString()</p>
+                                <h3>@linha["Diciplina"].ToString()</h3>
                             </div>
-                            <div class="icon">
-                                <i class="ion ion-bag"></i>
-                            </div>
-                            <a href=@Url.Action("NodoAluno", new { Arvore = linha["Id"].ToString() })><button type="button" class="btn btn-info">Resolver</button></a>
+                            <a href=@Url.Action("NodoAluno", new { Arvore = linha["Id"].ToString() })><button type="button" class="btn btn-danger btn-xs btn-block">Resolver</button></a>
                         </div>
                     </div>
                 }
