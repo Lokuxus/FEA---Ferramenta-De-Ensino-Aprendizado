@@ -136,7 +136,7 @@ namespace FEA.CadastroMateriaModel
 
             var repositorio = new SqlServerRepositorio.SqlServerRepositorio();
 
-            var sql = "Delete from nivel_do_conhecimento where id = @IdMateria";
+            var sql = "Delete from Nodos where id = @IdMateria";
 
             var retorno = repositorio.ExecutarSql(sql, parametros);
 

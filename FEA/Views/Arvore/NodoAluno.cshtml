@@ -24,7 +24,7 @@
                             <thead>
                                 <tr>
                                     <th>Nome</th>
-                                    <th>Editar</th>
+                                    <th>Resolver</th>
                                 </tr>
                             </thead>
                             <tbody> 
@@ -36,8 +36,10 @@
                                     <th>
                                             @linha["nome"].ToString()
                                     </th>
+
                                     <td>
-                                       <button href=@Url.Action("Questao", new { idMateria = linha["id"].ToString() }) type="button" class="btn btn-info">Editar</button>
+                                       <!--<button href=@Url.Action("Questao", new { idMateria = linha["id"].ToString() }) type="button" class="btn btn-info btn-resolver" data-questao="@linha["questao"].ToString()" data-respostaA="@linha["respostaA"].ToString()" data-respostaB="@linha["respostaB"].ToString()" data-respostaC="@linha["respostaC"].ToString()">Resolver</button>-->
+                                       <button type="button" class="btn btn-info btn-resolver" data-questao="@linha["questao"].ToString()" data-respostaa="@linha["respostaA"].ToString()" data-respostab="@linha["respostaB"].ToString()" data-respostaC="@linha["respostaC"].ToString()">Resolver</button>
                                     </td>
                                 </tr>
                                     }

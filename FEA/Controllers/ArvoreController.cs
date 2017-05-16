@@ -11,6 +11,7 @@ namespace FEA.Controllers
     public class ArvoreController : Controller
     {
         public static string _idArvore;
+        public static string _nome;
         // GET: Lista
         public ActionResult Arvores()
         {
@@ -22,6 +23,7 @@ namespace FEA.Controllers
         public ActionResult Nodos(string Arvore, string nome)
         {
             _idArvore = Arvore;
+            _nome = nome;
             ViewBag.idAvore = Arvore;
 
             var retornarSQL = MateriaModel.BuscaListaNodo(arvore: Arvore);
@@ -62,7 +64,7 @@ namespace FEA.Controllers
             var idarvore = _idArvore;
             var retorno = cad_materia.Cadastra_Nodo(arvore: idarvore, nome: nome, questao: questao, respostaA : respostaA, respostaB: respostaB, respostaC: respostaC);
 
-            return RedirectToAction("Nodos","Arvore",new { arvore = idarvore });
+            return RedirectToAction("Nodos","Arvore",new { arvore = idarvore, nome = _nome });
 
         }
 
@@ -77,13 +79,13 @@ namespace FEA.Controllers
             return RedirectToAction("Arvores");
         }
 
-        public ActionResult DeletaNodo(string idNodo, string Arvore)
+        public ActionResult DeletaNodo(string idNodo, string nome)
         {
             var conexao = new CadastroMateriaModel.MateriaModel();
 
             var retorno = conexao.Deleta_Nodo(id: idNodo);
 
-            return RedirectToAction("Nodos", Arvore);
+            return RedirectToAction("Nodos", "Arvore" , new { Arvore = _idArvore,  nome = nome } );
         }
 
         public ActionResult ArvoreAluno()

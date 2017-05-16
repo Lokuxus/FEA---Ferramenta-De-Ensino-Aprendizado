@@ -40,7 +40,7 @@
                                     {
                                 <tr>
                                     <th>
-                                            @linha["nome"].ToString()
+                                         @linha["nome"].ToString()
                                     </th>
 
                                     <th>
@@ -50,7 +50,7 @@
                                        <button href=@Url.Action("Questao", new { idMateria = linha["id"].ToString() }) type="button" class="btn btn-info">Editar</button>
                                     </td>
                                     <td>
-                                        <button href=@Url.Action("DeletaNodo", new { idNodo = linha["id"].ToString() }) type="button" class="btn btn-adn">Excluir</button>
+                                        <a href= "@Url.Action("DeletaNodo", new { idNodo = linha["id"].ToString(), nome = Model.Tables[1].Rows[0]["Arvore"] }) "><button type="button" class="btn btn-adn">Excluir</button></a>
                                     </td>
                                 </tr>
                                     }

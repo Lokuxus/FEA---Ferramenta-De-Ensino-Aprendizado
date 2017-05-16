@@ -29,19 +29,19 @@
             <!-- Informa a Materia -->
                 <div class="form-group">
                     <label>Materia</label>
-                    @Html.TextBoxFor(m => m.materia, new { @class = "form-control" , @placeholder = "Materia" })
+                    @Html.TextBoxFor(m => m.materia, new { @class = "form-control" , @placeholder = "Materia", @id = "txtMateria"})
                 </div>
 
                 <!-- Informação Turma -->
                 <div class="form-group">
                     <label>Turma</label>
-                    @Html.TextBoxFor(m => m.turma, new { @class = "form-control", @placeholder = "Questão" })
+                    @Html.TextBoxFor(m => m.turma, new { @class = "form-control", @placeholder = "Turma" , @id = "txtTurma" })
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" >Salvar</button>
+                    <button type="button" class="btn btn-primary btn-add-arvore">Salvar</button>
                 </div>
             //@Url.Action("Arvores", "Arvore") value="SalvaCadastroArvore"
-        }
+            }
     </div>
 
     <!-- /.box-body -->
